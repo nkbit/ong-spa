@@ -11,6 +11,8 @@
   --cor-borda: #cccccc;
   --cor-fundo: #ffffff;
   --cor-fundo-alt: #fafafa;
+  --cor-pagina: #ffffff;
+  color-scheme: light dark;
 
   --fonte-base: 1rem;
   --fonte-md: 1.25rem;
@@ -34,7 +36,7 @@ body {
   line-height: 1.6;
   margin: 0;
   color: var(--cor-texto);
-  background: var(--cor-fundo);
+  background: var(--cor-pagina);
 }
 
 h1 { font-size: var(--fonte-2xl); margin: 0; }
@@ -303,4 +305,27 @@ input:user-invalid, select:user-invalid, textarea:user-invalid {
   margin-top: var(--esp-1);
   color: var(--cor-erro);
   font-weight: 500;
+}
+
+/* Modo escuro */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cor-pagina: #121212;
+    --cor-fundo-alt: #1e1e1e;
+    --cor-texto: #f0f0f0;
+    --cor-texto-suave: #b8b8b8;
+    --cor-borda: #4a4a4a;
+    --cor-primaria-clara: #1d3a57;
+    --cor-secundaria-escura: #ffc266;
+  }
+
+  legend, dialog h2 { color: #9cc9f0; }
+  a:focus-visible, input:focus, select:focus, textarea:focus { outline-color: #9cc9f0; }
+  .mensagem-erro { color: #ff8a80; }
+  .badge-aviso { color: #222222; }
+  .badge-neutro { background: #555555; }
+  .alerta-sucesso { background: #14301c; }
+  .alerta-erro { background: #3a1814; }
+  .alerta-aviso { background: #3a2a0c; }
+  input:user-invalid, select:user-invalid, textarea:user-invalid { background: #3a1814; }
 }
