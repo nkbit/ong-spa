@@ -13,7 +13,10 @@ const dadosProjetos = [
 const cardPilar = (p) => `<article><h3>${p.titulo}</h3><p>${p.texto}</p></article>`;
 
 const cardProjeto = (p) => `<article><h4>${p.titulo}</h4>
-<figure><img src="../imagens/${p.imagem}.jpg" alt="${p.alt}" width="400" height="200"><figcaption>${p.legenda}</figcaption></figure></article>`;
+<figure><picture>
+<source srcset="../imagens/${p.imagem}.webp" type="image/webp">
+<img src="../imagens/${p.imagem}.jpg" alt="${p.alt}" width="400" height="200" loading="lazy" decoding="async">
+</picture><figcaption>${p.legenda}</figcaption></figure></article>`;
 
 const templates = {
   inicio: () => `
